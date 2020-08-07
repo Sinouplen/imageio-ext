@@ -85,10 +85,13 @@
             <id>deploygeosolutions</id>
             <distributionManagement>
                 <repository>
-                    <uniqueVersion>false</uniqueVersion>
-                    <id>geosolutions</id>
-                    <url>ftp://demo.geo-solutions.it</url>
+                    <id>comptacom-nexus-releases</id>
+                    <url>http://nexus.compta.com/repository/maven-releases/</url>
                 </repository>
+                <snapshotRepository>
+                    <id>comptacom-nexus-snapshots</id>
+                    <url>http://nexus.compta.com/repository/maven-snapshots/</url>
+                </snapshotRepository>
             </distributionManagement>
         </profile>
         <!-- Profiles set on the command-line overwrite default properties. -->
@@ -293,7 +296,16 @@
     <!--      <url>java-net:/maven2-repository/trunk/www/repository/</url>    -->
     <!--    </repository>                                                     -->
     <!-- </distributionManagement>                                            -->
-
+    <distributionManagement>
+        <repository>
+            <id>comptacom-nexus-releases</id>
+            <url>http://nexus.compta.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>comptacom-nexus-snapshots</id>
+            <url>http://nexus.compta.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <!-- ======================================================== -->
     <!--                 Developers and contributors              -->
@@ -325,6 +337,15 @@
             <organization>GeoSolutions</organization>
             <roles>
                 <role>Java Developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Gaël DESPREZ</name>
+            <id>gdesprez</id>
+            <email>gael.desprez@compta.com</email>
+            <organization>ComptaCom</organization>
+            <roles>
+                <role>Delivery Director</role>
             </roles>
         </developer>
     </developers>
@@ -578,6 +599,25 @@
                     </descriptors>
                     <finalName>imageio-ext-${project.version}</finalName>
                     <outputDirectory>${project.build.directory}/release</outputDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <executions>
+                    <execution>
+                        <id>default-deploy</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <serverId>comptacom-nexus-release</serverId>
+                    <nexusUrl>http://nexus.compta.com/</nexusUrl>
+                    <skipStaging>true</skipStaging>
                 </configuration>
             </plugin>
         </plugins>
