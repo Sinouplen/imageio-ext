@@ -32,9 +32,9 @@
 
     <scm>
         <connection>
-            scm:git:git://github.com/geosolutions-it/imageio-ext/
+            scm:git:git://github.com/Sinouplen/imageio-ext/
         </connection>
-        <url>https://github.com/geosolutions-it/imageio-ext/tree/master/</url>
+        <url>https://github.com/Sinouplen/imageio-ext/tree/master/</url>
     </scm>
 
     <description>Container for tools and extensions to Image I/O project</description>

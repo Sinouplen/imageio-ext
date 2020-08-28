@@ -19,7 +19,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <excludes>
-                        <!-- See https://github.com/geosolutions-it/imageio-ext/issues/148 -->
+                        <!-- See https://github.com/Sinouplen/imageio-ext/issues/148 -->
                         <exclude>**/JP2KReadTest.java</exclude>
                     </excludes>
                 </configuration>
