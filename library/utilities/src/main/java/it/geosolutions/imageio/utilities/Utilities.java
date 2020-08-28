@@ -59,6 +59,12 @@ public final class Utilities {
     /**
 	 * Convenience method for testing two objects for equality. One or both
 	 * objects may be null.
+	 *
+	 * @param object1 object1
+	 * @param object2 object2
+	 *
+	 * @return return true if objects are equals else false
+	 *
 	 * @deprecated Use {@link ImageIOUtilities#equals(Object,Object)} instead
 	 */
 	public static boolean equals(final Object object1, final Object object2) {
@@ -71,7 +77,14 @@ public final class Utilities {
 	 * compared. Declaration order doesn't matter. For example in ISO 19111,
 	 * different interfaces exist for different coordinate system geometries ({@code CartesianCS},
 	 * {@code PolarCS}, etc.).
-	 * @deprecated Use {@link ImageIOUtilities#sameInterfaces(Class<?>,Class<?>,Class<?>)} instead
+	 *
+	 * @param object1 object1
+	 * @param object2 object2
+	 * @param base base
+	 *
+	 * @return return true if objects are equals else false
+	 *
+	 * @deprecated Use {@link ImageIOUtilities#sameInterfaces(Class, Class, Class)} instead
 	 */
 	public static boolean sameInterfaces(final Class<?> object1,
 	        final Class<?> object2, final Class<?> base) {
@@ -97,13 +110,10 @@ public final class Utilities {
 	 * "java.lang.String" for a {@link String} object. It will also name array
 	 * according Java language usage, for example "double[]" instead of "[D".
 	 * 
-	 * @param classe
-	 *                The object class (may be {@code null}).
+	 * @param classe The object class (may be {@code null}).
 	 * @return A short class name for the specified object.
-	 * 
-	 * @todo Consider replacing by {@link Class#getSimpleName} when we will be
-	 *       allowed to compile for J2SE 1.5.
-	 * @deprecated Use {@link ImageIOUtilities#getShortName(Class<?>)} instead
+	 *
+	 * @deprecated Use {@link ImageIOUtilities#getShortName(Class)} instead
 	 */
 	public static String getShortName(Class<?> classe) {
 		return ImageIOUtilities.getShortName(classe);
@@ -137,9 +147,9 @@ public final class Utilities {
 	 * powers of 2.
 	 * In case xSSF == ySSF == 2^N, the method return 0 (No optimal subsampling factor found).
 	 * 
-	 * @param xSubsamplingFactor
-	 * @param ySubsamplingFactor
-	 * @return 
+	 * @param xSubsamplingFactor xSSF
+	 * @param ySubsamplingFactor ySSF
+	 * @return In case xSSF == ySSF == 2^N, the method return 0 (No optimal subsampling factor found).
 	 * @deprecated Use {@link ImageIOUtilities#getSubSamplingFactor2(int,int)} instead
 	 */
 	public static int getSubSamplingFactor2(final int xSubsamplingFactor, final int ySubsamplingFactor) {
@@ -169,6 +179,9 @@ public final class Utilities {
 	}
     
     /**
+	 * @param attributeName attributeName
+	 * @return String
+	 *
 	 * @deprecated Use {@link ImageIOUtilities#adjustAttributeName(String)} instead
 	 */
 	public static String adjustAttributeName(final String attributeName){
@@ -210,6 +223,8 @@ public final class Utilities {
 	 * {@linkplain JAI#getDefaultInstance default JAI instance}. This method is
 	 * a shortcut for <code>{@linkplain #setNativeAccelerationAllowed(String,boolean,JAI)
 	 * setNativeAccelerationAllowed}(operation, allowed, JAI.getDefaultInstance())</code>.
+	 * @param operation The operation name (e.g. {@code "Affine"}).
+	 * @param allowed {@code false} to disallow native acceleration.
 	 *
 	 * @see #setNativeAccelerationAllowed(String, boolean, JAI)
 	 * @deprecated Use {@link ImageIOUtilities#setNativeAccelerationAllowed(String,boolean)} instead
@@ -219,6 +234,9 @@ public final class Utilities {
 	}
     
     /**
+	 * @param checkMe object to check
+	 * @param message message
+	 *
 	 * @deprecated Use {@link ImageIOUtilities#checkNotNull(Object,String)} instead
 	 */
 	public final static void checkNotNull (final Object checkMe, final String message){

@@ -112,10 +112,10 @@ public class ImageIOUtilities {
      *
      * <p>An instance of <code>IndexColorModel</code> will be created for
      * instances of <code>MultiPixelPackedSampleModel</code>. The colormap
-     * will be a grayscale ramp with <code>1 << numberOfBits</code>
+     * will be a grayscale ramp with <code>1&nbsp;&#12296;&#12296;&nbsp;numberOfBits</code>
      * entries ranging from zero to at most 255.</p>
      *
-     * @param sampleModel
+     * @param sampleModel sample model
      * @return An instance of <code>ColorModel</code> that is suitable for
      *         the supplied <code>SampleModel</code>, or <code>null</code>.
      *
@@ -440,10 +440,10 @@ public class ImageIOUtilities {
     /**
      * Method to return core ImageReaderSPI/ImageWriterSPI for a given formatName.
      *
-     * @param registry
-     * @param filter
-     * @param formatName
-     * @param isReader
+     * @param registry registry
+     * @param filter filter
+     * @param formatName formatName
+     * @param isReader isReader
      *
      * @return list of {@link ImageReaderWriterSpi}
      */
@@ -525,6 +525,11 @@ public class ImageIOUtilities {
 	/**
 	 * Convenience method for testing two objects for equality. One or both
 	 * objects may be null.
+     *
+     * @param object1 object1
+     * @param object2 object2
+     *
+     * @return return true if equals else false
 	 */
 	public static boolean equals(final Object object1, final Object object2) {
 	    return (object1 == object2)
@@ -651,9 +656,10 @@ public class ImageIOUtilities {
 	 *                The object class (may be {@code null}).
 	 * @return A short class name for the specified object.
 	 * 
-	 * @todo Consider replacing by {@link Class#getSimpleName} when we will be
+	 * Warning : Consider replacing by {@link Class#getSimpleName} when we will be
 	 *       allowed to compile for J2SE 1.5.
 	 */
+	//@todo Consider replacing by {@link Class#getSimpleName} when we will be allowed to compile for J2SE 1.5.
 	public static String getShortName(Class<?> classe) {
 	    if (classe == null) {
 	        return "<*>";
@@ -743,9 +749,9 @@ public class ImageIOUtilities {
 	 * powers of 2.
 	 * In case xSSF == ySSF == 2^N, the method return 0 (No optimal subsampling factor found).
 	 * 
-	 * @param xSubsamplingFactor
-	 * @param ySubsamplingFactor
-	 * @return 
+	 * @param xSubsamplingFactor xSSF
+	 * @param ySubsamplingFactor ySSF
+	 * @return In case xSSF == ySSF == 2^N, the method return 0 (No optimal subsampling factor found).
 	 */
 	public static int getSubSamplingFactor2(final int xSubsamplingFactor, final int ySubsamplingFactor) {
 	    boolean resamplingIsRequired = false;
@@ -888,6 +894,9 @@ public class ImageIOUtilities {
 	 * a shortcut for <code>{@linkplain #setNativeAccelerationAllowed(String,boolean,JAI)
 	 * setNativeAccelerationAllowed}(operation, allowed, JAI.getDefaultInstance())</code>.
 	 *
+     * @param operation operation
+     * @param allowed allowed
+     *
 	 * @see #setNativeAccelerationAllowed(String, boolean, JAI)
 	 */
 	public static void setNativeAccelerationAllowed(final String operation, final boolean allowed) {

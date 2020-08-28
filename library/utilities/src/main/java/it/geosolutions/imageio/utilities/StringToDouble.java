@@ -23,7 +23,7 @@ import java.lang.ref.SoftReference;
  * number.
  * 
  * <p>
- * It is a utility class uses by the {@link AsciiGridRaster} class for
+ * It is a utility class uses by the it.geosolutions.imageio.plugins.arcgrid.raster.AsciiGridRaster class for
  * converting the input {@link String} into numbers. This class is highly
  * optimized for performances reasons.
  * 
@@ -33,7 +33,7 @@ import java.lang.ref.SoftReference;
  * 
  * <p>
  * <strong>Usage</strong>
- * <p>
+ *
  * 
  * <pre>
  *        	final StringToDouble converter = new StringToDouble();
@@ -169,7 +169,7 @@ public final class StringToDouble {
 	 * @param newChar
 	 *            to parse.
 	 * @return true if there is a value to get, false otherwise.
-	 * @see {@link StringToDouble#isEof()}
+	 * @see #isEof()
 	 */
 	public boolean pushChar(final int newChar) {
 		boolean retVal = false;
@@ -263,8 +263,6 @@ public final class StringToDouble {
 	 * Returns a value, if any was advertised by the
 	 * {@link StringToDouble#pushChar(int)} method.
 	 * 
-	 * @return
-	 * 
 	 * @return the computed value;
 	 */
 	public double compute() {
@@ -285,7 +283,8 @@ public final class StringToDouble {
 
 	/**
 	 * Retrieves a poole {@link StringToDouble} object.
-	 * 
+	 *
+	 * @return StringToDouble
 	 */
 	public static StringToDouble acquire() {
 //		synchronized (pool) {
@@ -310,7 +309,7 @@ public final class StringToDouble {
 	/**
 	 * Reacquire a pooled {@link StringToDouble}.
 	 * 
-	 * @param c
+	 * @param c StringToDouble
 	 */
 	public static void release(StringToDouble c) {
 		c.builder.setLength(0);
