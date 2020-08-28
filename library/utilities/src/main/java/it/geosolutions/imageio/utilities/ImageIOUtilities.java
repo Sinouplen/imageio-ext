@@ -112,9 +112,10 @@ public class ImageIOUtilities {
      *
      * <p>An instance of <code>IndexColorModel</code> will be created for
      * instances of <code>MultiPixelPackedSampleModel</code>. The colormap
-     * will be a grayscale ramp with <code>1&nbsp;<<&nbsp;numberOfBits</code>
+     * will be a grayscale ramp with <code>1 << numberOfBits</code>
      * entries ranging from zero to at most 255.</p>
      *
+     * @param sampleModel
      * @return An instance of <code>ColorModel</code> that is suitable for
      *         the supplied <code>SampleModel</code>, or <code>null</code>.
      *
@@ -217,11 +218,11 @@ public class ImageIOUtilities {
     
     /**
      * Given a root node, print the values/attributes tree using the System Out
-     * 
-     * @TODO change it using Logger
+     *
      * @param root
      *                the root node to be printed.
      */
+    //@TODO change it using Logger
     public static void displayImageIOMetadata(Node root) {
         displayMetadata(root, 0);
     }
@@ -438,6 +439,13 @@ public class ImageIOUtilities {
 
     /**
      * Method to return core ImageReaderSPI/ImageWriterSPI for a given formatName.
+     *
+     * @param registry
+     * @param filter
+     * @param formatName
+     * @param isReader
+     *
+     * @return list of {@link ImageReaderWriterSpi}
      */
     public static List<ImageReaderWriterSpi> getImageReaderWriterSPI(ServiceRegistry registry,
             ServiceRegistry.Filter filter, String formatName, boolean isReader) {
