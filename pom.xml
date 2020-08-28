@@ -32,7 +32,7 @@
 
     <scm>
         <connection>
-            scm:git:git://github.com/Sinouplen/imageio-ext/
+            scm:git:https://github.com/Sinouplen/imageio-ext
         </connection>
         <url>https://github.com/Sinouplen/imageio-ext/tree/master/</url>
     </scm>
