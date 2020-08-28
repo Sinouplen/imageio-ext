@@ -29,7 +29,7 @@
 
     <scm>
         <connection>
-            scm:git:git://github.com/Sinouplen//imageio-ext/
+            scm:git:git://github.com/Sinouplen/imageio-ext/
         </connection>
         <url>https://github.com/Sinouplen/imageio-ext/tree/master/</url>
       <tag>imageio-ext-1.3.2</tag>
