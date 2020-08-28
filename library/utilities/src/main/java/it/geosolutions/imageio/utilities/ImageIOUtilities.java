@@ -112,7 +112,7 @@ public class ImageIOUtilities {
      *
      * <p>An instance of <code>IndexColorModel</code> will be created for
      * instances of <code>MultiPixelPackedSampleModel</code>. The colormap
-     * will be a grayscale ramp with <code>1&nbsp;&#12296;&#12296;&nbsp;numberOfBits</code>
+     * will be a grayscale ramp with <code>1&nbsp;&lt;&lt;&nbsp;numberOfBits</code>
      * entries ranging from zero to at most 255.</p>
      *
      * @param sampleModel sample model
@@ -537,7 +537,11 @@ public class ImageIOUtilities {
 	}
 
 	/**
-	 * Returns {@code true} if the two specified objects implements exactly the
+     * @param object1 object1
+     * @param object2 object2
+     * @param base base
+     *
+	 * @return {@code true} if the two specified objects implements exactly the
 	 * same set of interfaces. Only interfaces assignable to {@code base} are
 	 * compared. Declaration order doesn't matter. For example in ISO 19111,
 	 * different interfaces exist for different coordinate system geometries ({@code CartesianCS},
