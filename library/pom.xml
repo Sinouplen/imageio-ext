@@ -28,6 +28,15 @@
     <module>gdalframework</module>
     <module>imagereadmt</module>
     <module>netcdf-core</module>
-    <module>libjpegturbo</module>
   </modules>
+
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.libjpegturbo/turbojpeg-wrapper -->
+    <dependency>
+      <groupId>org.libjpegturbo</groupId>
+      <artifactId>turbojpeg-wrapper</artifactId>
+      <version>1.2.1.5</version>
+    </dependency>
+
+  </dependencies>
 </project>
