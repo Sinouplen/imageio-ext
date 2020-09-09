@@ -16,6 +16,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
                 <configuration>
                     <excludes>
                         <!-- See https://github.com/Sinouplen/imageio-ext/issues/148 -->
