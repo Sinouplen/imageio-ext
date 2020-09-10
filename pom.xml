@@ -158,111 +158,111 @@
             <!--       seem to work with aggregated javadoc.             -->
             <!--                                                         -->
             <!-- ======================================================= -->
-            <plugin>
-                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.2.0</version>
+<!--            <plugin>-->
+<!--                &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin &ndash;&gt;-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--                <version>3.2.0</version>-->
 
-                <configuration>
-                    <!-- Necessary to enable javadoc to handle J2SE 1.4 features. -->
-                    <source>1.8</source>
-                    <!-- Specifies whether or not the version text is included.-->
-                    <version>false</version>
-                    <!-- Omit qualifying package name before class names in output.-->
-                    <noqualifier>all</noqualifier>
-                    <!-- Shuts off non-error and non-warning messages.-->
-                    <quiet>true</quiet>
-                    <!-- The maximum Java heap size to be used to run javadoc. -->
-                    <maxmemory>512M</maxmemory>
-                    <!-- Specifies the encoding name of the source files.-->
-                    <encoding>ISO-8859-1</encoding>
-                    <doclint>none</doclint>
+<!--                <configuration>-->
+<!--                    &lt;!&ndash; Necessary to enable javadoc to handle J2SE 1.4 features. &ndash;&gt;-->
+<!--                    <source>1.8</source>-->
+<!--                    &lt;!&ndash; Specifies whether or not the version text is included.&ndash;&gt;-->
+<!--                    <version>false</version>-->
+<!--                    &lt;!&ndash; Omit qualifying package name before class names in output.&ndash;&gt;-->
+<!--                    <noqualifier>all</noqualifier>-->
+<!--                    &lt;!&ndash; Shuts off non-error and non-warning messages.&ndash;&gt;-->
+<!--                    <quiet>true</quiet>-->
+<!--                    &lt;!&ndash; The maximum Java heap size to be used to run javadoc. &ndash;&gt;-->
+<!--                    <maxmemory>512M</maxmemory>-->
+<!--                    &lt;!&ndash; Specifies the encoding name of the source files.&ndash;&gt;-->
+<!--                    <encoding>ISO-8859-1</encoding>-->
+<!--                    <doclint>none</doclint>-->
 
-                    <breakiterator>true</breakiterator>
-                    <excludePackageNames>
-                        org.geotools.resources:org.geotools.maven:com
-                    </excludePackageNames>
+<!--                    <breakiterator>true</breakiterator>-->
+<!--                    <excludePackageNames>-->
+<!--                        org.geotools.resources:org.geotools.maven:com-->
+<!--                    </excludePackageNames>-->
 
-                    <!-- Enables the Javadoc tool to interpret a simple, one-argument -->
-                    <!-- custom block tag tagname in doc comments. Note: <placement /> -->
-                    <!-- should be a combinaison of the letters Xaoptcmf.             -->
-                    <tags>
-                        <tag>
-                            <name>todo</name>
-                            <placement>a</placement>
-                            <head>TODO:</head>
-                        </tag>
-                        <tag>
-                            <name>todo:</name>
-                            <placement>a</placement>
-                            <head>TODO:</head>
-                        </tag>
-                        <tag>
-                            <name>TODO</name>
-                            <placement>a</placement>
-                            <head>TODO:</head>
-                        </tag>
-                        <tag>
-                            <name>task</name>
-                            <placement>tfmc</placement>
-                            <head>TODO:</head>
-                        </tag>
-                        <tag>
-                            <name>UML</name>
-                            <placement>a</placement>
-                            <head>UML:</head>
-                        </tag>
-                        <tag>
-                            <name>uml.property</name>
-                            <placement>a</placement>
-                            <head>UML property:</head>
-                        </tag>
-                    </tags>
+<!--                    &lt;!&ndash; Enables the Javadoc tool to interpret a simple, one-argument &ndash;&gt;-->
+<!--                    &lt;!&ndash; custom block tag tagname in doc comments. Note: <placement /> &ndash;&gt;-->
+<!--                    &lt;!&ndash; should be a combinaison of the letters Xaoptcmf.             &ndash;&gt;-->
+<!--                    <tags>-->
+<!--                        <tag>-->
+<!--                            <name>todo</name>-->
+<!--                            <placement>a</placement>-->
+<!--                            <head>TODO:</head>-->
+<!--                        </tag>-->
+<!--                        <tag>-->
+<!--                            <name>todo:</name>-->
+<!--                            <placement>a</placement>-->
+<!--                            <head>TODO:</head>-->
+<!--                        </tag>-->
+<!--                        <tag>-->
+<!--                            <name>TODO</name>-->
+<!--                            <placement>a</placement>-->
+<!--                            <head>TODO:</head>-->
+<!--                        </tag>-->
+<!--                        <tag>-->
+<!--                            <name>task</name>-->
+<!--                            <placement>tfmc</placement>-->
+<!--                            <head>TODO:</head>-->
+<!--                        </tag>-->
+<!--                        <tag>-->
+<!--                            <name>UML</name>-->
+<!--                            <placement>a</placement>-->
+<!--                            <head>UML:</head>-->
+<!--                        </tag>-->
+<!--                        <tag>-->
+<!--                            <name>uml.property</name>-->
+<!--                            <placement>a</placement>-->
+<!--                            <head>UML property:</head>-->
+<!--                        </tag>-->
+<!--                    </tags>-->
 
-                    <!-- Separates packages on the overview page into the    -->
-                    <!-- groups  specified.                                  -->
-                    <groups>
-                        <group>
-                            <title>GDAL Framework</title>
-                            <packages>
-                                it.geosolutions.imageio.gdalframework
-                            </packages>
-                        </group>
-                        <group>
-                            <title>Plugins</title>
-                            <packages>
-                                it.geosolutions.imageio.plugins.*
-                            </packages>
-                        </group>
-                        <group>
-                            <title>Custom Streams</title>
-                            <packages>it.geosolutions.imageio.stream*:it.geosolutions.io*</packages>
-                        </group>
-                        <group>
-                            <title>Multithreaded ImageRead</title>
-                            <packages>
-                                it.geosolutions.imageio.imageioimpl.imagereadmt*
-                            </packages>
-                        </group>
-                    </groups>
-                </configuration>
-                <reportSets>
-                    <reportSet>
-                        <id>aggregate</id>
-                        <inherited>false</inherited>
-                        <reports>
-                            <report>aggregate</report>
-                        </reports>
-                    </reportSet>
-                    <reportSet>
-                        <id>default</id>
-                        <reports>
-                            <report>javadoc</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
+<!--                    &lt;!&ndash; Separates packages on the overview page into the    &ndash;&gt;-->
+<!--                    &lt;!&ndash; groups  specified.                                  &ndash;&gt;-->
+<!--                    <groups>-->
+<!--                        <group>-->
+<!--                            <title>GDAL Framework</title>-->
+<!--                            <packages>-->
+<!--                                it.geosolutions.imageio.gdalframework-->
+<!--                            </packages>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <title>Plugins</title>-->
+<!--                            <packages>-->
+<!--                                it.geosolutions.imageio.plugins.*-->
+<!--                            </packages>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <title>Custom Streams</title>-->
+<!--                            <packages>it.geosolutions.imageio.stream*:it.geosolutions.io*</packages>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <title>Multithreaded ImageRead</title>-->
+<!--                            <packages>-->
+<!--                                it.geosolutions.imageio.imageioimpl.imagereadmt*-->
+<!--                            </packages>-->
+<!--                        </group>-->
+<!--                    </groups>-->
+<!--                </configuration>-->
+<!--                <reportSets>-->
+<!--                    <reportSet>-->
+<!--                        <id>aggregate</id>-->
+<!--                        <inherited>false</inherited>-->
+<!--                        <reports>-->
+<!--                            <report>aggregate</report>-->
+<!--                        </reports>-->
+<!--                    </reportSet>-->
+<!--                    <reportSet>-->
+<!--                        <id>default</id>-->
+<!--                        <reports>-->
+<!--                            <report>javadoc</report>-->
+<!--                        </reports>-->
+<!--                    </reportSet>-->
+<!--                </reportSets>-->
+<!--            </plugin>-->
 
             <!-- ======================================================= -->
             <!--     Web site generation.                                -->
