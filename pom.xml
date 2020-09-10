@@ -177,6 +177,7 @@
                     <maxmemory>512M</maxmemory>
                     <!-- Specifies the encoding name of the source files.-->
                     <encoding>ISO-8859-1</encoding>
+                    <doclint>none</doclint>
 
                     <breakiterator>true</breakiterator>
                     <excludePackageNames>

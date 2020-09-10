@@ -87,7 +87,7 @@ import java.util.zip.ZipFile;
  * <p>
  * By convention you should try and locate {@code test-data} near the JUnit test
  * cases that uses it. If you need an access to shared test data, import the
- * {@link org.geotools.TestData} class from the {@code sample-module} instead
+ * org.geotools.TestData class from the {@code sample-module} instead
  * of this one.
  *
  * @since 2.0
@@ -96,7 +96,7 @@ import java.util.zip.ZipFile;
  * @author Simone Giannecchini, GeoSolutions
  * @author Martin Desruisseaux
  *
- * @tutorial http://www.geotools.org/display/GEOT/5.8+Test+Data
+ * tutorial http://www.geotools.org/display/GEOT/5.8+Test+Data
  */
 
 public class TestData implements Runnable {
@@ -163,7 +163,7 @@ public class TestData implements Runnable {
     }
 
     /**
-     * Returns {@code true} if {@value #EXTENSIVE_TEST_KEY} system property is set to
+     * @return {@code true} if {@value #EXTENSIVE_TEST_KEY} system property is set to
      * {@code true}. Test suites should check this value before to perform lengthly tests.
      */
     public static boolean isExtensiveTest() {
@@ -171,7 +171,7 @@ public class TestData implements Runnable {
     }
 
     /**
-     * Returns {@code true} if {@value #INTERACTIVE_TEST_KEY} system property is set to {@code true}.
+     * @return {@code true} if {@value #INTERACTIVE_TEST_KEY} system property is set to {@code true}.
      * Test suites should check this value before showing any kind of graphical window to the user.
      */
     public static boolean isInteractiveTest() {
@@ -401,6 +401,8 @@ public class TestData implements Runnable {
     /**
      * Requests that the file or directory denoted by the specified
      * pathname be deleted when the virtual machine terminates.
+     *
+     * @param file file or directory denoted by the specified pathname
      */
     protected static void deleteOnExit(final File file) {
         deleteOnExit(file, true);
